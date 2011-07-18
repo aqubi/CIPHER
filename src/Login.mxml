@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mx:TitleWindow title="Login" layout="absolute" xmlns:mx="http://www.adobe.com/2006/mxml">
+<mx:Script source="LoginScript.as"/>
+<mx:Label text="16byte" textAlign="right" x="240" height="20" y="60" width="50"/>
+<mx:TextInput id="txtDbfile" toolTip="save file" text="app-storage:/cipher.db" textAlign="left" fontSize="12" width="260" x="30" y="0"/>
+<mx:TextInput id="txtPassword" toolTip="password" maxChars="16" displayAsPassword="true" fontSize="14" width="210" x="30" y="50"/>
+<mx:CheckBox id="chkSave" selected="true" label=" Save Password" width="130" x="30" y="80" height="20"/>
+<mx:ControlBar horizontalAlign="center" width="100%" x="0" y="100">
+<mx:Button label="OK" click="ok()" width="80" x="50" y="50" height="30"/>
+<mx:Button label="CANCEL" click="cancel()" width="90" x="130" y="50" height="30"/>
+</mx:ControlBar>
+<mx:Image source="@Embed('../icons/database_save.png')" x="10" y="0"/>
+<mx:Image source="@Embed('../icons/key.png')" x="10" height="20" y="50" width="20"/>
+<mx:Button label="..." click="selectFile()" width="35" x="290" y="0" height="25"/>
+<mx:Button label="restore default" click="restoreDefault()" width="130" x="195" y="25" height="20"/>
+</mx:TitleWindow>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mx:WindowedApplication showTitleBar="true" titleBarColors="#F3ECD8" showStatusBar="false" title="CIPHER" showGripper="false" backgroundColor="#f2f0e9" titleAlignment="left" pageTitle="CIPHER" layout="absolute" xmlns:mx="http://www.adobe.com/2006/mxml" applicationComplete="onApplicationCompleted();" width="700" height="500">
+<mx:Script source="CIPHER.as"/>
+<mx:HDividedBox paddingBottom="5" paddingLeft="5" paddingTop="5" paddingRight="5" width="100%" height="100%">
+<mx:VBox verticalGap="1" width="280" height="100%">
+<mx:HBox horizontalGap="0" width="100%">
+<mx:Button toolTip="change password" icon="@Embed('../icons/cog_edit.png')" click="changePassword()" width="20" x="10" y="10" height="20"/>
+<mx:Image source="@Embed('../icons/magnifier.png')"/>
+<mx:TextInput cornerRadius="5" id="txtFilter" toolTip="filter" change="filter()" borderStyle="solid" width="100%"/>
+</mx:HBox>
+<mx:DataGrid id="grid" dataProvider="{datas}" click="showDetail()" width="100%" height="100%">
+<mx:columns><mx:DataGridColumn dataField="id" minWidth="20" headerText="id" width="25"/>
+<mx:DataGridColumn dataField="title" headerText="title" width="150"/>
+<mx:DataGridColumn dataField="tag" headerText="tag" width="100"/>
+</mx:columns>
+</mx:DataGrid>
+</mx:VBox>
+<mx:Box paddingLeft="5" paddingRight="5" width="100%" height="100%">
+<mx:Box direction="horizontal" horizontalGap="1" width="100%">
+<mx:Label id="lblId" textAlign="right" fontWeight="bold" width="30"/>
+<mx:TextInput id="txtTitle" fontSize="16" width="100%"/>
+</mx:Box>
+<mx:Box direction="horizontal" horizontalGap="1" width="100%" height="100%">
+<mx:Box verticalGap="13" paddingTop="3" width="20" x="0" y="40" height="100%">
+<mx:Image source="@Embed('../icons/user.png')" x="0" y="40"/>
+<mx:Image source="@Embed('../icons/key.png')"/>
+<mx:Box verticalGap="9" width="20" height="200">
+<mx:Image source="@Embed('../icons/world_link.png')" x="0" y="100"/>
+<mx:Image source="@Embed('../icons/tag_blue.png')" x="0" y="120"/>
+<mx:Image source="@Embed('../icons/page_white_stack.png')" x="0" y="140"/>
+</mx:Box>
+</mx:Box>
+<mx:Box verticalGap="2" width="100%" height="100%">
+<mx:TextInput id="txtAccount" toolTip="account" fontSize="14" width="300" x="20" y="35"/>
+<mx:TextInput id="txtPassword" toolTip="password" fontSize="14" width="300" x="20" y="60"/>
+<mx:TextInput id="txtUrl" toolTip="url" width="100%" x="20" y="80"/>
+<mx:TextInput id="txtTag" toolTip="tag" width="100%" x="20" y="100"/>
+<mx:TextArea id="txtComment" toolTip="memo" width="100%" x="20" y="120" height="100%"/>
+</mx:Box>
+</mx:Box>
+<mx:Box horizontalAlign="center" direction="horizontal" width="100%">
+<mx:Button toolTip="add" label="new" icon="@Embed('../icons/add.png')" click="addData()" width="90" x="20" y="280" height="30"/>
+<mx:Button label="update" icon="@Embed('../icons/pencil.png')" enabled="{lblId.text.length != 0}" click="updateData()" width="90" x="120" y="280" height="30"/>
+<mx:Button label="delete" icon="@Embed('../icons/delete.png')" enabled="{lblId.text.length != 0}" click="deleteData()" width="90" x="220" y="280" height="30"/>
+</mx:Box>
+</mx:Box>
+</mx:HDividedBox>
+</mx:WindowedApplication>
